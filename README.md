@@ -40,3 +40,4 @@ Now that the server is up and running, change your working directory to '../robi
 
 Now, you should see the following! This is a stock dashboard that updates every second with some previously hard-coded data.
 
+![alt text](https://github.com/rohankal/Simple-Robinhood-Dashboard/blob/main/robinhood/src/images/demo.png?raw=true)
