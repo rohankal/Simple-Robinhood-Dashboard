@@ -7,34 +7,29 @@ app.use( express.json() )
 
 const stocks = [
         {      
-            id: 1,  
-            name: 'apple',
             ticker: 'AAPL',
             price: 175.06,
+            history: [175.06]
         },
         {
-            id: 2,
-            name: 'tesla',
             ticker: 'TSLA',
             price: 1091.26,
+            history: [1091.26]
         },
         {    
-            id: 3,
-            name: 'amazon',
             ticker: 'AMZN',
             price: 3281.10,
+            history: [3281.10]
         },
         {
-            id: 4, 
-            name: 'Nio',
             ticker: 'NIO',
             price: 22.47,
+            history: [22.47]
         },
         {     
-            id: 5,
-            name: 'google',
             ticker: 'GOOGL',
             price: 2821.26,
+            history: [2821.26]
         }
 ]
 
@@ -98,8 +93,8 @@ app.put('/api/stocks/:name', (req, res) => {
 
 function validateStock(stock) {
     const schema = {
-        id: Joi.number().min(1).required(),
-        name: Joi.string().min(1).required(),
+        // id: Joi.number().min(1).required(),
+        // name: Joi.string().min(1).required(),
         ticker: Joi.string().min(1).max(4).required(),
         price: Joi.number().min(1).required()
     } 
@@ -110,7 +105,9 @@ function changeStockPrices(arr) {
     setInterval( () => {
         arr.forEach((element, index) => {
             const percent = (Math.floor(Math.random() * (105 - 95 + 1) + 95))/100.0;
-            arr[index].price *= percent;
+            const newPrice = arr[index].price * percent;
+            arr[index].price = newPrice;
+            arr[index].history.push(newPrice)
           });
     }, 1000)
 }
