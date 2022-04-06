@@ -4,7 +4,7 @@ Simlple-Robinhood-Dashboard is a a clean and simple Robinhood-like web app that 
 
 ## Setup
 
-In order to successfully run this application, you need to make sure you have a couple things setup beforehand.
+In order to successfully run this application, you need to make sure you have a couple things set-up beforehand.
 
 You will need the following:
 - Joi
@@ -40,3 +40,4 @@ Now that the server is up and running, change your working directory to '../robi
 
 Now, you should see the following! This is a stock dashboard that updates every second with some previously hard-coded data.
 
+![alt text](https://github.com/rohankal/Simple-Robinhood-Dashboard/blob/main/robinhood/src/images/demo.png?raw=true)
